@@ -15,7 +15,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="navbar-brand text-white">
-           <span th:text="${user.surname}"></span>
+           <span th:text="${user.lastName}"></span>
            <span th:text="${user.id}"></span>
         </span>
         <form th:action="@{/logout}" method="post">
@@ -54,16 +54,20 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Username</th>
-                                        <th>Surname</th>
-                                        <th>Password</th>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Age</th>
+                                        <th>Roles</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <td th:text="${user.id}"></td>
                                         <td th:text="${user.username}"></td>
-                                        <td th:text="${user.surname}"></td>
-                                        <td th:text="${user.password}"></td>
+                                        <td th:text="${user.firstName}"></td>
+                                        <td th:text="${user.lastName}"></td>
+                                        <td th:text="${user.age}"></td>
+                                        <td th:text="${user.roles}"></td>
                                     </tr>
                                     </tbody>
                                 </table>

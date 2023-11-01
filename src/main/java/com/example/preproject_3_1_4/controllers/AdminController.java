@@ -12,9 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.security.Principal;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -60,7 +62,9 @@ public class AdminController {
         if (userService.findByUsername(userDto.getUsername()) == null) {
             User user = new User(
                     userDto.getUsername(),
-                    userDto.getSurname(),
+                    userDto.getFirstName(),
+                    userDto.getLastName(),
+                    userDto.getAge(),
                     userDto.getPassword(),
                     new HashSet<>(roles)
             );
@@ -83,8 +87,10 @@ public class AdminController {
 
         Set<Role> setRoles = new HashSet<>(roles);
         user.setRoles(setRoles);
-        user.setSurname(userDto.getSurname());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
         user.setUsername(userDto.getUsername());
+        user.setAge(userDto.getAge());
         if (!userDto.getPassword().isEmpty()) {
             userService.edit(user);
         }

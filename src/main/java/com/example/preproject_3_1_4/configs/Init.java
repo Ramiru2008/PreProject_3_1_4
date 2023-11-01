@@ -32,10 +32,10 @@ public class Init {
         userRoles.add(roleUser);
         roleService.add(roleUser);
 
-        User admin = new User("Roman", "Kudasov", "123", adminRoles);
+        User admin = new User("Ramiru2008", "Roman", "Kudasov", 44, "123", adminRoles);
         userService.add(admin);
 
-        User user = new User("Corey", "Taylor", "123", userRoles);
+        User user = new User("Slipknot", "Corey", "Taylor", 43, "123", userRoles);
         userService.add(user);
 
     }

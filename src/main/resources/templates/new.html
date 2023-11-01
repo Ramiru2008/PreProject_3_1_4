@@ -14,7 +14,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="navbar-brand text-white">
-           <span th:if="${currentUser != null}" th:text="${currentUser.surname}"></span>
+           <span th:if="${currentUser != null}" th:text="${currentUser.lastName}"></span>
            <span th:if="${currentUser != null}" th:text="${currentUser.id}"></span>
         </span>
         <form th:action="@{/logout}" method="post">
@@ -64,9 +64,17 @@
                                     <input th:name="username" th:field="*{username}" th:type="text" class="form-control"
                                            id="username" required/>
                                     <br>
-                                    <label for="surname"><b>Surname</b></label>
-                                    <input th:name="surname" th:field="*{surname}" th:type="text" class="form-control"
-                                           id="surname" required/>
+                                    <label for="firstName"><b>FirstName</b></label>
+                                    <input th:name="firstName" th:field="*{firstName}" th:type="text" class="form-control"
+                                           id="firstName" required/>
+                                    <br>
+                                    <label for="lastName"><b>LastName</b></label>
+                                    <input th:name="lastName" th:field="*{lastName}" th:type="text" class="form-control"
+                                           id="lastName" required/>
+                                    <br>
+                                    <label for="age"><b>Age</b></label>
+                                    <input th:name="age" th:field="*{age}" th:type="text" class="form-control"
+                                           id="age" required/>
                                     <br>
                                     <label for="password"><b>Password</b></label>
                                     <input th:name="password" th:field="*{password}" th:type="password"
