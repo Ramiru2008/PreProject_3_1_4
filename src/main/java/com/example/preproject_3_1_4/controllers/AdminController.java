@@ -89,7 +89,9 @@ public class AdminController {
         user.setRoles(setRoles);
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
-        user.setUsername(userDto.getUsername());
+        if (userDto.getUsername() != null) {
+            user.setUsername(userDto.getUsername());
+        }
         user.setAge(userDto.getAge());
         if (!userDto.getPassword().isEmpty()) {
             userService.edit(user);
